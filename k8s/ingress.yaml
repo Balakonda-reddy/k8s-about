@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: static-ingress
+ namespace: about
+spec:
+ rules:
+ - host: k8s-index.devopscoursewithbalakonda.xyz
+   http:
+     paths:
+     - path: /about.html
+       backend:
+         serviceName: about-svc
+         servicePort: 80
